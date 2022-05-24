@@ -10,7 +10,7 @@
 
 int main(int argc,char *argv[])
 {
-    auto db = influxdb::InfluxDBFactory::Get("http://10.23.0.64:8086?db=temperature_db");
+    auto db = influxdb::InfluxDBFactory::Get("http://localhost:8086?db=temperature_db");
     db->createDatabaseIfNotExists();
     for (auto i: db->query("SHOW DATABASES")) std::cout<<i.getTags()<<std::endl;
     return 0;
